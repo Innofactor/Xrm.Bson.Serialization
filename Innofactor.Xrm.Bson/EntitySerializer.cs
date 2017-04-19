@@ -1,11 +1,13 @@
 ﻿namespace Innofactor.Xrm.Bson
 {
-    using System;
+    using Innofactor.Xrm.Bson.Extensions;
+    using Microsoft.Xrm.Sdk;
     using MongoDB.Bson.Serialization;
+    using System;
 
     internal class EntitySerializer : IBsonSerializer
     {
-        public Type ValueType => throw new NotImplementedException();
+        public Type ValueType => typeof(Entity);
 
         public object Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
         {
@@ -14,7 +16,9 @@
 
         public void Serialize(BsonSerializationContext context, BsonSerializationArgs args, object value)
         {
-            throw new NotImplementedException();
+            context.Writer.WriteStartDocument();
+            context.Writer.WriteReference((value as Entity).ToEntityReference());
+            context.Writer.WriteEndDocument();
         }
     }
 }

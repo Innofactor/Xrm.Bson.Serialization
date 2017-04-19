@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="EntityReferenceSerializer.cs" />
     <Compile Include="EntitySerializer.cs" />
+    <Compile Include="Extensions\Common.cs" />
     <Compile Include="MoneySerializer.cs" />
     <Compile Include="OptionSetValueSerializer.cs" />
     <Compile Include="SerializationProvider.cs" />
