@@ -16,7 +16,7 @@
 
         public void Serialize(BsonSerializationContext context, BsonSerializationArgs args, object value)
         {
-            Serialize(context, args, value as EntityReference;
+            Serialize(context, args, value as EntityReference);
         }
 
         public void Serialize(BsonSerializationContext context, BsonSerializationArgs args, EntityReference value)
