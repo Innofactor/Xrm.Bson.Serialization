@@ -17,12 +17,18 @@
 
         public object Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
         {
-            throw new NotImplementedException();
+            return Deserialize(context, args);
         }
 
         EntityReference IBsonSerializer<EntityReference>.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
         {
-            throw new NotImplementedException();
+            context.Reader.ReadStartDocument();
+
+            var result = new EntityReference(context.Reader.ReadString(), new Guid(context.Reader.ReadBinaryData().AsByteArray));
+
+            context.Reader.ReadEndDocument();
+
+            return result;
         }
 
         public void Serialize(BsonSerializationContext context, BsonSerializationArgs args, object value)
