@@ -8,14 +8,7 @@
 
     internal static class Common
     {
-        internal static void WriteReference(this IBsonWriter writer, EntityReference value)
-        {
-            writer.WriteName("_name");
-            writer.WriteString(value.LogicalName);
-
-            writer.WriteName("_id");
-            writer.WriteBinaryData(new BsonBinaryData(value.Id));
-        }
+        #region Internal Methods
 
         internal static KeyValuePair<string, object> ReadDocument(this IBsonReader reader)
         {
@@ -52,5 +45,16 @@
 
             return new KeyValuePair<string, object>(key, value);
         }
+
+        internal static void WriteReference(this IBsonWriter writer, EntityReference value)
+        {
+            writer.WriteName("_name");
+            writer.WriteString(value.LogicalName);
+
+            writer.WriteName("_id");
+            writer.WriteBinaryData(new BsonBinaryData(value.Id));
+        }
+
+        #endregion Internal Methods
     }
 }

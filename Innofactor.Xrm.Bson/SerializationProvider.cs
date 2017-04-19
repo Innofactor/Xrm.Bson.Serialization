@@ -1,8 +1,8 @@
 ﻿namespace Innofactor.Xrm.Bson
 {
-    using System;
     using Microsoft.Xrm.Sdk;
     using MongoDB.Bson.Serialization;
+    using System;
 
     public class SerializationPrivider : IBsonSerializationProvider
     {

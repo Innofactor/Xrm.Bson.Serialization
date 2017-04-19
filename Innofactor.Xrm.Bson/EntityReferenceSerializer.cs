@@ -7,9 +7,20 @@
 
     internal class EntityReferenceSerializer : IBsonSerializer<EntityReference>
     {
+        #region Public Properties
+
         public Type ValueType => typeof(EntityReference);
 
+        #endregion Public Properties
+
+        #region Public Methods
+
         public object Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+        {
+            throw new NotImplementedException();
+        }
+
+        EntityReference IBsonSerializer<EntityReference>.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
         {
             throw new NotImplementedException();
         }
@@ -26,9 +37,6 @@
             context.Writer.WriteEndDocument();
         }
 
-        EntityReference IBsonSerializer<EntityReference>.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
-        {
-            throw new NotImplementedException();
-        }
+        #endregion Public Methods
     }
 }
