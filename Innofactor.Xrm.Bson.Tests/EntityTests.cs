@@ -1,10 +1,10 @@
 ﻿namespace Innofactor.Xrm.Bson.Tests
 {
-    using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Microsoft.Xrm.Sdk;
     using MongoDB.Bson;
     using MongoDB.Bson.Serialization;
+    using System;
 
     [TestClass]
     public class EntityTests
@@ -57,5 +57,4 @@
 
         #endregion Public Methods
     }
-
 }

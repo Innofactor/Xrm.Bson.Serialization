@@ -54,5 +54,4 @@
 
         #endregion Public Methods
     }
-
 }
