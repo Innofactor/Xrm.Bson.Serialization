@@ -1,13 +1,23 @@
 ﻿namespace Innofactor.Xrm.Bson.Tests
 {
+    using System;
     using Microsoft.Xrm.Sdk;
     using MongoDB.Bson;
     using MongoDB.Bson.Serialization;
-    using System;
     using NUnit.Framework;
 
     public class EntityReferenceTests
     {
+        #region Public Constructors
+
+        public EntityReferenceTests()
+        {
+            // Setting up serializers
+            BsonSerializer.RegisterSerializationProvider(new SerializationPrivider());
+        }
+
+        #endregion Public Constructors
+
         #region Public Methods
 
         [Test, Category("Bson Tests")]
@@ -49,13 +59,6 @@
 
             // Checking id
             Assert.AreEqual(expectedValue.Id, actualValue.AsBsonDocument["_id"].AsGuid);
-        }
-
-        [TestInitialize]
-        public void Setup()
-        {
-            // Setting up serializers
-            BsonSerializer.RegisterSerializationProvider(new SerializationPrivider());
         }
 
         #endregion Public Methods

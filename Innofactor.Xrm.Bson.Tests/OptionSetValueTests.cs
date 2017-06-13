@@ -7,6 +7,16 @@
 
     public class OptionSetValueTests
     {
+        #region Public Constructors
+
+        public OptionSetValueTests()
+        {
+            // Setting up serializers
+            BsonSerializer.RegisterSerializationProvider(new SerializationPrivider());
+        }
+
+        #endregion Public Constructors
+
         #region Public Methods
 
         [Test, Category("Bson Tests")]
@@ -42,13 +52,6 @@
             // Assert
             Assert.AreEqual(true, actualValue.IsBsonDocument);
             Assert.AreEqual(expectedValue, actualValue.AsBsonDocument["_option"].AsInt32);
-        }
-
-        [TestInitialize]
-        public void Setup()
-        {
-            // Setting up serializers
-            BsonSerializer.RegisterSerializationProvider(new SerializationPrivider());
         }
 
         #endregion Public Methods

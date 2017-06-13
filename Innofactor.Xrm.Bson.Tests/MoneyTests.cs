@@ -7,6 +7,16 @@
 
     public class MoneyTests
     {
+        #region Public Constructors
+
+        public MoneyTests()
+        {
+            // Setting up serializers
+            BsonSerializer.RegisterSerializationProvider(new SerializationPrivider());
+        }
+
+        #endregion Public Constructors
+
         #region Public Methods
 
         [Test, Category("Bson Tests")]
@@ -43,14 +53,7 @@
             Assert.AreEqual(true, actualValue.IsBsonDocument);
 
             // Checking value
-            Assert.AreEqual(expectedValue, actualValue.AsBsonDocument["_money"].AsDecimal128);
-        }
-
-        [TestInitialize]
-        public void Setup()
-        {
-            // Setting up serializers
-            BsonSerializer.RegisterSerializationProvider(new SerializationPrivider());
+            Assert.AreEqual(expectedValue, actualValue.AsBsonDocument["_money"].AsDecimal);
         }
 
         #endregion Public Methods
