@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Xrm.Bson.Serialization</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/Innofactor/Xrm.Bson.Serialization/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/Innofactor/Xrm.Bson.Serialization</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>mongodb bson microsoft-dynamics-crm crm-sdk xrm</tags>
+  </metadata>
+</package>
