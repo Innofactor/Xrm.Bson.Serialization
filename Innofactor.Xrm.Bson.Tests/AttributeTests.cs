@@ -1,17 +1,16 @@
 ﻿namespace Innofactor.Xrm.Bson.Tests
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Microsoft.Xrm.Sdk;
     using MongoDB.Bson;
     using MongoDB.Bson.Serialization;
     using System;
+    using NUnit.Framework;
 
-    [TestClass]
     public class AttributeTests
     {
         #region Public Methods
 
-        [TestMethod, TestCategory("Bson Tests")]
+        [Test, Category("Bson Tests")]
         public void DeSerializeEntityBoolean_Success()
         {
             // Arrange
@@ -29,7 +28,7 @@
             Assert.AreEqual(expectedValue, actualValue);
         }
 
-        [TestMethod, TestCategory("Bson Tests")]
+        [Test, Category("Bson Tests")]
         public void DeSerializeEntityDateTime_Success()
         {
             // Arrange
@@ -47,7 +46,7 @@
             Assert.AreEqual(expectedValue.ToShortTimeString(), actualValue.ToShortTimeString());
         }
 
-        [TestMethod, TestCategory("Bson Tests")]
+        [Test, Category("Bson Tests")]
         public void DeSerializeEntityInteger_Success()
         {
             // Arrange
@@ -65,7 +64,7 @@
             Assert.AreEqual(expectedValue, actualValue);
         }
 
-        [TestMethod, TestCategory("Bson Tests")]
+        [Test, Category("Bson Tests")]
         public void DeSerializeEntityString_Success()
         {
             // Arrange
@@ -83,7 +82,7 @@
             Assert.AreEqual(expectedValue, actualValue);
         }
 
-        [TestMethod, TestCategory("Bson Tests")]
+        [Test, Category("Bson Tests")]
         public void SerializeEntityBoolean_Success()
         {
             // Arrange
@@ -100,7 +99,7 @@
             Assert.AreEqual(expectedValue, actualValue.AsBoolean);
         }
 
-        [TestMethod, TestCategory("Bson Tests")]
+        [Test, Category("Bson Tests")]
         public void SerializeEntityDateTime_Success()
         {
             // Arrange
@@ -117,7 +116,7 @@
             Assert.AreEqual(expectedValue.ToShortTimeString(), actualValue.ToUniversalTime().ToShortTimeString());
         }
 
-        [TestMethod, TestCategory("Bson Tests")]
+        [Test, Category("Bson Tests")]
         public void SerializeEntityInteger_Success()
         {
             // Arrange
@@ -134,7 +133,7 @@
             Assert.AreEqual(expectedValue, actualValue.AsInt32);
         }
 
-        [TestMethod, TestCategory("Bson Tests")]
+        [Test, Category("Bson Tests")]
         public void SerializeEntityString_Success()
         {
             // Arrange

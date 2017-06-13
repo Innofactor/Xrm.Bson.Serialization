@@ -1,16 +1,15 @@
 ﻿namespace Innofactor.Xrm.Bson.Tests
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Microsoft.Xrm.Sdk;
     using MongoDB.Bson;
     using MongoDB.Bson.Serialization;
+    using NUnit.Framework;
 
-    [TestClass]
     public class OptionSetValueTests
     {
         #region Public Methods
 
-        [TestMethod, TestCategory("Bson Tests")]
+        [Test, Category("Bson Tests")]
         public void DeSerializeEntityOptionSetValue_Success()
         {
             // Arrange
@@ -28,7 +27,7 @@
             Assert.AreEqual(expectedValue, (actualValue as OptionSetValue).Value);
         }
 
-        [TestMethod, TestCategory("Bson Tests")]
+        [Test, Category("Bson Tests")]
         public void SerializeEntityOptionSet_Success()
         {
             // Arrange
