@@ -75,35 +75,36 @@
             {
                 context.Writer.WriteName(pair.Key);
 
-                if (pair.Value is string)
+                if (pair.Value.GetType().Equals(typeof(string)))
                 {
                     context.Writer.WriteString((string)pair.Value);
                 }
-                else if (pair.Value is int)
+                else if (pair.Value.GetType().Equals(typeof(int)))
                 {
                     context.Writer.WriteInt32((int)pair.Value);
                 }
-                else if (pair.Value is bool)
+                else if (pair.Value.GetType().Equals(typeof(bool)))
                 {
                     context.Writer.WriteBoolean((bool)pair.Value);
                 }
-                else if (pair.Value is DateTime date)
+                else if (pair.Value.GetType().Equals(typeof(DateTime)))
                 {
+                    var date = (DateTime)pair.Value;
                     var stamp = (long)date.Subtract(new DateTime(1970, 1, 1)).TotalMilliseconds;
 
                     context.Writer.WriteDateTime(stamp);
                 }
-                else if (pair.Value is EntityReference)
+                else if (pair.Value.GetType().Equals(typeof(EntityReference)))
                 {
-                    BsonSerializer.Serialize(context.Writer, (EntityReference)pair.Value);
+                    BsonSerializer.Serialize(context.Writer, pair.Value as EntityReference);
                 }
-                else if (pair.Value is OptionSetValue)
+                else if (pair.Value.GetType().Equals(typeof(OptionSetValue)))
                 {
-                    BsonSerializer.Serialize(context.Writer, (OptionSetValue)pair.Value);
+                    BsonSerializer.Serialize(context.Writer, pair.Value as OptionSetValue);
                 }
-                else if (pair.Value is Money)
+                else if (pair.Value.GetType().Equals(typeof(Money)))
                 {
-                    BsonSerializer.Serialize(context.Writer, (Money)pair.Value);
+                    BsonSerializer.Serialize(context.Writer, pair.Value as Money);
                 }
                 else
                 {
