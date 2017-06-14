@@ -24,7 +24,7 @@
         public void DeSerializeEntityBoolean_Success()
         {
             // Arrange
-            var expectedValue = true;
+            const bool expectedValue = true;
             var expectedEntity = new Entity("account");
             expectedEntity.Attributes.Add("key", expectedValue);
             var bson = expectedEntity.ToBsonDocument();
@@ -60,7 +60,7 @@
         public void DeSerializeEntityInteger_Success()
         {
             // Arrange
-            var expectedValue = 1;
+            const int expectedValue = 1;
             var expectedEntity = new Entity("account");
             expectedEntity.Attributes.Add("key", expectedValue);
             var bson = expectedEntity.ToBsonDocument();
@@ -78,7 +78,7 @@
         public void DeSerializeEntityString_Success()
         {
             // Arrange
-            var expectedValue = "value";
+            const string expectedValue = "value";
             var expectedEntity = new Entity("account");
             expectedEntity.Attributes.Add("key", expectedValue);
             var bson = expectedEntity.ToBsonDocument();
@@ -96,7 +96,7 @@
         public void SerializeEntityBoolean_Success()
         {
             // Arrange
-            var expectedValue = true;
+            const bool expectedValue = true;
             var entity = new Entity("account");
             entity.Attributes.Add("key", expectedValue);
 
@@ -130,7 +130,7 @@
         public void SerializeEntityInteger_Success()
         {
             // Arrange
-            var expectedValue = 1;
+            const int expectedValue = 1;
             var entity = new Entity("account");
             entity.Attributes.Add("key", expectedValue);
 
@@ -147,7 +147,7 @@
         public void SerializeEntityString_Success()
         {
             // Arrange
-            var expectedValue = "value";
+            const string expectedValue = "value";
             var entity = new Entity("account");
             entity.Attributes.Add("key", expectedValue);
 

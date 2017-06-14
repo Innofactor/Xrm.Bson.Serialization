@@ -23,7 +23,7 @@
         public void DeSerializeEntityOptionSetValue_Success()
         {
             // Arrange
-            var expectedValue = 1;
+            const int expectedValue = 1;
             var expectedEntity = new Entity("account");
             expectedEntity.Attributes.Add("key", new OptionSetValue(expectedValue));
             var bson = expectedEntity.ToBsonDocument();
@@ -41,7 +41,7 @@
         public void SerializeEntityOptionSet_Success()
         {
             // Arrange
-            var expectedValue = 1;
+            const int expectedValue = 1;
             var entity = new Entity("account");
             entity.Attributes.Add("key", new OptionSetValue(expectedValue));
 
