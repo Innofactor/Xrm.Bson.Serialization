@@ -1,9 +1,9 @@
-﻿namespace Innofactor.Xrm.Bson
-{
-    using Microsoft.Xrm.Sdk;
-    using MongoDB.Bson.Serialization;
-    using System;
+﻿using System;
+using Microsoft.Xrm.Sdk;
+using MongoDB.Bson.Serialization;
 
+namespace Innofactor.Xrm.Bson
+{
     public class SerializationPrivider : IBsonSerializationProvider
     {
         #region Public Methods
@@ -14,20 +14,15 @@
             {
                 return new EntitySerializer();
             }
-            else if (type == typeof(EntityReference))
+            if (type == typeof(EntityReference))
             {
                 return new EntityReferenceSerializer();
             }
-            else if (type == typeof(OptionSetValue))
+            if (type == typeof(OptionSetValue))
             {
                 return new OptionSetValueSerializer();
             }
-            else if (type == typeof(Money))
-            {
-                return new MoneySerializer();
-            }
-
-            return default(IBsonSerializer);
+            return type == typeof(Money) ? new MoneySerializer() : default(IBsonSerializer);
         }
 
         #endregion Public Methods

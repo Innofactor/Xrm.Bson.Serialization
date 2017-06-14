@@ -23,7 +23,7 @@
         public void DeSerializeEntityMoney_Success()
         {
             // Arrange
-            var expectedValue = 1.95m;
+            const decimal expectedValue = 1.95m;
             var expectedEntity = new Entity("account");
             expectedEntity.Attributes.Add("key", new Money(expectedValue));
             var bson = expectedEntity.ToBsonDocument();
@@ -41,7 +41,7 @@
         public void SerializeEntityMoney_Success()
         {
             // Arrange
-            var expectedValue = 1.95m;
+            const decimal expectedValue = 1.95m;
             var entity = new Entity("account");
             entity.Attributes.Add("key", new Money(expectedValue));
 
